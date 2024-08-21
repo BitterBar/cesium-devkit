@@ -1,0 +1,12 @@
+czm_material czm_getMaterial(czm_materialInput materialInput)
+{
+    czm_material material = czm_getDefaultMaterial(materialInput);
+    vec2 st = materialInput.st;
+
+    float time = czm_frameNumber * animationSpeed;
+    vec4 colorImage = texture(image, vec2(fract(st.s - time), st.t));
+
+    material.alpha = colorImage.a * color.a;
+    material.diffuse = (colorImage.rgb + color.rgb) / 2.0;
+    return material;
+}
