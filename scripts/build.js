@@ -83,7 +83,10 @@ function createInlineConfig(target, prod = false) {
         formats: buildOptions.formats,
         fileName: (format) => (prod ? `${target}.${format}.prod.js` : `${target}.${format}.js`)
       },
-      outDir
+      outDir,
+      rollupOptions: {
+        external: ['cesium']
+      }
     }
   }
 }
