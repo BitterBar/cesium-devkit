@@ -85,7 +85,12 @@ function createInlineConfig(target, prod = false) {
       },
       outDir,
       rollupOptions: {
-        external: ['cesium']
+        external: ['cesium'],
+        output: {
+          globals: {
+            cesium: 'Cesium'
+          }
+        }
       }
     }
   }
