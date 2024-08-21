@@ -1,0 +1,64 @@
+{
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "run-s clean && node scripts/build.js",
+    "build-dts": "tsc -p tsconfig.build-browser.json && rollup -c rollup.dts.config.js",
+    "release": "node scripts/release.js",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write packages/",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "simple-git-hooks",
+    "test": "vitest",
+    "clean": "rimraf packages/*/dist"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged && pnpm type-check",
+    "commit-msg": "node scripts/verify-commit.js"
+  },
+  "lint-staged": {
+    "*.{js,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "@babel/parser": "^7.25.3",
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@tsconfig/node20": "^20.1.4",
+    "@types/node": "^20.14.5",
+    "@types/semver": "^7.5.8",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/eslint-config-typescript": "^13.0.0",
+    "@vue/tsconfig": "^0.5.1",
+    "conventional-changelog-cli": "^5.0.0",
+    "enquirer": "^2.4.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
+    "lint-staged": "^15.2.7",
+    "magic-string": "^0.30.11",
+    "npm-run-all2": "^6.2.2",
+    "picocolors": "^1.0.1",
+    "prettier": "^3.2.5",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.19.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "semver": "^7.6.3",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "~5.4.0",
+    "vite": "^5.3.1",
+    "vitest": "^2.0.5",
+    "vue-tsc": "^2.0.21"
+  }
+}

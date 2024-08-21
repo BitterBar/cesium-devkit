@@ -1,0 +1,16 @@
+{
+  "name": "@cesium-devkit/core",
+  "version": "0.0.1",
+  "main": "index.js",
+  "module": "dist/core.es.js",
+  "types": "dist/core.d.ts",
+  "buildOptions": {
+    "formats": [
+      "es",
+      "cjs"
+    ]
+  },
+  "devDependencies": {
+    "cesium": "^1.120.0"
+  }
+}
