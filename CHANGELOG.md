@@ -1,3 +1,7 @@
+## [0.0.1-beta.0](https://github.com/BitterBar/cesium-devkit/compare/v0.0.1-alpha.3...v0.0.1-beta.0) (2024-08-22)
+
+
+
 ## [0.0.1-alpha.3](https://github.com/BitterBar/cesium-devkit/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2024-08-22)
 
 
