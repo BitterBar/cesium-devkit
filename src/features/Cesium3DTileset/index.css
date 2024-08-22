@@ -1,0 +1,10 @@
+.Cesium3DTileset ul {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.Cesium3DTileset ul li {
+  display: flex;
+  align-items: center;
+}

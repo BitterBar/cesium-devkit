@@ -14,5 +14,11 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 'latest'
+  },
+  globals: {
+    __DEV__: 'readonly',
+    __TDT_KEY__: 'readonly',
+    __TDT_SUBDOMAINS__: 'readonly',
+    __CESIUM_BASE_URL__: 'readonly'
   }
 }
