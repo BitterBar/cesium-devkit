@@ -1,6 +1,6 @@
 {
   "name": "@cesium-devkit/material",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "description": "@cesium-devkit/material",
   "main": "index.js",
   "module": "dist/material.es.js",
