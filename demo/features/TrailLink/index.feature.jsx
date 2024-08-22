@@ -2,9 +2,10 @@ import { defineComponent, onBeforeUnmount } from 'vue'
 import { Cartesian3, Color } from 'cesium'
 
 import { TrailLinkMaterialProperty } from '@material'
-import resolvePublic from '@/utils/resolvePublic'
-import useViewerStore from '@/store/viewerStore'
-import bezier from '@/utils/bezier'
+import useViewerStore from '@demo/store/viewerStore'
+import bezier from '@demo/utils/bezier'
+
+import flyline from '@demo/assets/images/flyline.png'
 
 export const TITLE = 'TrailLink'
 
@@ -28,7 +29,7 @@ export default defineComponent({
         width: 33,
         clampToGround: true,
         material: new TrailLinkMaterialProperty({
-          image: resolvePublic('assets/images/flyline.png'),
+          image: flyline,
           color: Color.ORANGERED
         })
       }

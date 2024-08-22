@@ -15,7 +15,7 @@ import {
   VertexFormat
 } from 'cesium'
 
-import useViewerStore from '@/store/viewerStore'
+import useViewerStore from '@demo/store/viewerStore'
 
 export const TITLE = 'Cesium3DPolyline'
 
@@ -60,23 +60,22 @@ export default defineComponent({
         })
       }
 
-      fetch('/preview/assets/jsons/hangzhou_road.geojson')
-        .then((e) => e.json())
-        .then((res) => {
-          res.features.slice(0, 4000).forEach((e) => {
-            gemetries.push(
-              new GeometryInstance({
-                geometry: createPolylineVolumeGeometry(e.geometry.coordinates),
-                attributes: {
-                  distanceDisplayCondition: new DistanceDisplayConditionGeometryInstanceAttribute(
-                    500.0,
-                    10000.0
-                  )
-                }
-              })
-            )
-          })
+      import('@demo/assets/jsons/hangzhou_road.json').then((res) => {
+        res.features.slice(0, 4000).forEach((e) => {
+          gemetries.push(
+            new GeometryInstance({
+              geometry: createPolylineVolumeGeometry(e.geometry.coordinates),
+              attributes: {
+                distanceDisplayCondition: new DistanceDisplayConditionGeometryInstanceAttribute(
+                  500.0,
+                  10000.0
+                )
+              }
+            })
+          )
         })
+        func()
+      })
     }
 
     const material = Material.fromType('Color', {

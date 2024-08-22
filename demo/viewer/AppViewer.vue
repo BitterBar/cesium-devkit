@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onBeforeUnmount, onMounted } from 'vue'
-import { flyHome } from '@/source'
-import { selectedFeature } from '@/features'
+import { flyHome } from '@demo/source'
+import { selectedFeature } from '@demo/features'
 import { Viewer, PostProcessStage } from 'cesium'
-import useViewerStore from '@/store/viewerStore'
+import useViewerStore from '@demo/store/viewerStore'
 
 const viewerStore = useViewerStore()
 const container = ref(null)

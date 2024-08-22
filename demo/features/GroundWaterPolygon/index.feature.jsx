@@ -12,8 +12,8 @@ import {
   PolygonHierarchy
 } from 'cesium'
 
-import useViewerStore from '@/store/viewerStore'
-import bezier from '@/utils/bezier'
+import useViewerStore from '@demo/store/viewerStore'
+import bezier from '@demo/utils/bezier'
 
 export const TITLE = 'GroundWaterPolygon'
 

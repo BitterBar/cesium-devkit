@@ -21,7 +21,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@demo': fileURLToPath(new URL('./demo', import.meta.url)),
       '@core': fileURLToPath(new URL('./packages/core/src', import.meta.url)),
       '@material': fileURLToPath(new URL('./packages/material/src', import.meta.url))
     }

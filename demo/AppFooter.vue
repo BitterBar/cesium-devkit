@@ -1,6 +1,6 @@
 <script setup>
-import useViewerStore from '@/store/viewerStore'
-import { flyHome, toggleTerrain } from '@/source'
+import useViewerStore from '@demo/store/viewerStore'
+import { flyHome, toggleTerrain } from '@demo/source'
 import { toRefs } from 'vue'
 
 const { viewer } = toRefs(useViewerStore())

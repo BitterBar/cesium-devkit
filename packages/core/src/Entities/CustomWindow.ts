@@ -62,19 +62,26 @@ export default class CustomWindow {
     return this._viewer
   }
 
-  constructor(options: CustomWindowOptions) {
-    if (!defined(options.position)) {
+  constructor({
+    show,
+    position,
+    viewer,
+    pixelOffset,
+    verticalOrigin,
+    horizontalOrigin
+  }: CustomWindowOptions) {
+    if (!defined(position)) {
       throw new Error('position is required')
     }
 
-    this.show = defaultValue(options.show, true)
-    this._position = defaultValue(options.position, Cartesian3.ZERO)
-    this._boundingSphere = BoundingSphere.fromPoints([options.position])
+    this.show = defaultValue(show, true)
+    this._position = defaultValue(position, Cartesian3.ZERO)
+    this._boundingSphere = BoundingSphere.fromPoints([position])
 
-    if (defined(options.viewer)) this.viewer = options.viewer
-    if (defined(options.pixelOffset)) this.pixelOffset = options.pixelOffset
-    if (defined(options.verticalOrigin)) this.verticalOrigin = options.verticalOrigin
-    if (defined(options.horizontalOrigin)) this.horizontalOrigin = options.horizontalOrigin
+    if (defined(viewer)) this.viewer = viewer
+    if (defined(pixelOffset)) this.pixelOffset = pixelOffset
+    if (defined(verticalOrigin)) this.verticalOrigin = verticalOrigin
+    if (defined(horizontalOrigin)) this.horizontalOrigin = horizontalOrigin
   }
 
   setContent(content: string | number | null | Element) {

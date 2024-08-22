@@ -2,9 +2,9 @@ import './index.css'
 
 import { defineComponent, onBeforeUnmount, onMounted, render, h, ref, Teleport } from 'vue'
 import { Cartesian2, Cartesian3, Color, HorizontalOrigin, VerticalOrigin } from 'cesium'
-import { centerDegrees } from '@/source'
+import { centerDegrees } from '@demo/source'
 
-import useViewerStore from '@/store/viewerStore'
+import useViewerStore from '@demo/store/viewerStore'
 import { CustomWindow } from '@core'
 
 export const TITLE = '自定义弹窗'

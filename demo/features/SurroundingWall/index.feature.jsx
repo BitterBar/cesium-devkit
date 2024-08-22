@@ -9,8 +9,8 @@ import {
   WallGeometry
 } from 'cesium'
 
-import resolvePublic from '@/utils/resolvePublic'
-import useViewerStore from '@/store/viewerStore'
+import useViewerStore from '@demo/store/viewerStore'
+import spriteline from '@demo/assets/images/spriteline.png'
 
 export const TITLE = 'SurroundingWall'
 
@@ -44,7 +44,7 @@ export default defineComponent({
             type: Material.TrailLinkType,
             uniforms: {
               color: Color.DARKTURQUOISE,
-              image: resolvePublic('assets/images/spriteline.png'),
+              image: spriteline,
               animationSpeed: 0.008
             }
           }

@@ -1,8 +1,8 @@
 import './index.css'
 
 import { defineComponent, onBeforeUnmount, reactive, Teleport } from 'vue'
-import createCesium3DTileset from '@/utils/createCesium3DTileset'
-import useViewerStore from '@/store/viewerStore'
+import createCesium3DTileset from '@demo/utils/createCesium3DTileset'
+import useViewerStore from '@demo/store/viewerStore'
 import { Cartesian3, Cartographic, Matrix4 } from 'cesium'
 
 export const TITLE = 'Cesium3DTileset'

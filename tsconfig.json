@@ -1,5 +1,5 @@
 {
-  "include": ["env.d.ts", "scripts/*", "packages/*/src", "packages/*/__tests__"],
+  "include": ["packages/env.d.ts", "scripts/*", "packages/*/src", "packages/*/__tests__"],
   "exclude": ["packages/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
@@ -20,6 +20,9 @@
     "useDefineForClassFields": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@cesium-devkit/*": ["packages/*/src"]
+    }
   }
 }

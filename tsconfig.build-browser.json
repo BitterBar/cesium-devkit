@@ -7,10 +7,10 @@
     "stripInternal": true
   },
   "include": [
-    "env.d.ts",
-    "packages/shared/src",
-    "packages/shader/src",
+    "packages/env.d.ts",
+    "packages/core/src",
     "packages/material/src",
-    "packages/core/src"
+    "packages/shader/src",
+    "packages/shared/src"
   ]
 }
