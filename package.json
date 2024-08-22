@@ -16,7 +16,7 @@
     "clean": "rimraf packages/*/dist temp"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged && pnpm type-check",
+    "pre-commit": "pnpm lint-staged && pnpm check",
     "commit-msg": "node scripts/verify-commit.js"
   },
   "lint-staged": {
