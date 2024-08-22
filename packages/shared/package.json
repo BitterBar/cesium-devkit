@@ -1,0 +1,48 @@
+{
+  "name": "@cesium-devkit/shared",
+  "version": "0.0.1-alpha.2",
+  "description": "@cesium-devkit/shared",
+  "main": "index.js",
+  "module": "dist/shared.es.js",
+  "types": "dist/shared.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/shared.d.ts",
+      "node": {
+        "production": "./dist/shared.cjs.prod.js",
+        "development": "./dist/shared.cjs.js",
+        "default": "./index.js"
+      },
+      "module": "./dist/shared.es.js",
+      "import": "./dist/shared.es.js",
+      "require": "./index.js"
+    },
+    "./*": "./*"
+  },
+  "buildOptions": {
+    "name": "CesiumDevkitShared",
+    "formats": [
+      "es",
+      "cjs",
+      "umd"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BitterBar/cesium-devkit",
+    "directory": "packages/shared"
+  },
+  "keywords": [
+    "cesium-devkit"
+  ],
+  "author": "Bitter Bar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BitterBar/cesium-devkit/issues"
+  },
+  "homepage": "https://github.com/BitterBar/cesium-devkit/tree/main/packages/shared#readme"
+}

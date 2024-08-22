@@ -1,0 +1,48 @@
+{
+  "name": "@cesium-devkit/shader",
+  "version": "0.0.1-alpha.2",
+  "description": "@cesium-devkit/shader",
+  "main": "index.js",
+  "module": "dist/shader.es.js",
+  "types": "dist/shader.d.ts",
+  "files": [
+    "index.js",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/shader.d.ts",
+      "node": {
+        "production": "./dist/shader.cjs.prod.js",
+        "development": "./dist/shader.cjs.js",
+        "default": "./index.js"
+      },
+      "module": "./dist/shader.es.js",
+      "import": "./dist/shader.es.js",
+      "require": "./index.js"
+    },
+    "./*": "./*"
+  },
+  "buildOptions": {
+    "name": "CesiumDevkitShader",
+    "formats": [
+      "es",
+      "cjs",
+      "umd"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BitterBar/cesium-devkit",
+    "directory": "packages/shader"
+  },
+  "keywords": [
+    "cesium-devkit"
+  ],
+  "author": "Bitter Bar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BitterBar/cesium-devkit/issues"
+  },
+  "homepage": "https://github.com/BitterBar/cesium-devkit/tree/main/packages/shader#readme"
+}

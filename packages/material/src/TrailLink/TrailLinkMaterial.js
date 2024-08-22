@@ -1,19 +1,16 @@
 import { Color, Material } from 'cesium'
-import TrailLinkMaterial from '../Shaders/TrailLinkMaterial.glsl?raw'
-
-export const DEFAULT_COLOR = Color.WHITE
-export const DEFAULT_ANIMATION_SPEED = 0.005
+import { TrailLinkMaterialShader } from '@cesium-devkit/shader'
 
 Material.TrailLinkType = 'TrailLink'
 Material._materialCache.addMaterial(Material.TrailLinkType, {
   fabric: {
     type: Material.TrailLinkType,
     uniforms: {
-      color: DEFAULT_COLOR,
+      color: Color.WHITE,
       image: '',
-      animationSpeed: DEFAULT_ANIMATION_SPEED
+      animationSpeed: 0.005
     },
-    source: TrailLinkMaterial
+    source: TrailLinkMaterialShader
   },
   translucent: () => true
 })

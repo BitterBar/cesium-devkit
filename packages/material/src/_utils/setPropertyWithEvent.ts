@@ -1,5 +1,5 @@
 import { ConstantProperty } from 'cesium'
-import defined from '../_utils/defined'
+import { defined } from '@cesium-devkit/shared'
 
 const createPriviteName = (name: string) => `_${name}`
 const createSubcriptionName = (name: string) => `_${name}Subscription`

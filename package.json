@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "run-s clean && node scripts/build.js",
+    "build": "node scripts/build.js",
     "build-dts": "tsc -p tsconfig.build-browser.json && rollup -c rollup.dts.config.js",
     "release": "node scripts/release.js",
     "check": "tsc --incremental --noEmit",

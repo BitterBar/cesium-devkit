@@ -1,4 +1,4 @@
-czm_material czm_getMaterial(czm_materialInput materialInput)
+export default `czm_material czm_getMaterial(czm_materialInput materialInput)
 {
     czm_material material = czm_getDefaultMaterial(materialInput);
     vec2 st = materialInput.st;
@@ -9,4 +9,4 @@ czm_material czm_getMaterial(czm_materialInput materialInput)
     material.alpha = colorImage.a * color.a;
     material.diffuse = (colorImage.rgb + color.rgb) / 2.0;
     return material;
-}
+}`

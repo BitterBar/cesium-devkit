@@ -31,7 +31,11 @@ const { withTypes: buildTypes, filter } = values
 run()
 
 async function run() {
-  const targets = !filter ? buildTargets : buildTargets.filter((t) => t === filter)
+  let targets = buildTargets
+  if (filter) {
+    const filters = filter.split(',')
+    targets = buildTargets.filter((t) => filters.includes(t))
+  }
 
   // Build all targets for development
   console.log(pico.bgBlue(pico.black(`Building targets in ${pico.bgGreen('development')} mode...`)))

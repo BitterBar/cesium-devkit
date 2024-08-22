@@ -1,30 +1,30 @@
 {
-  "name": "@cesium-devkit/core",
+  "name": "@cesium-devkit/material",
   "version": "0.0.1-alpha.2",
-  "description": "@cesium-devkit/core",
+  "description": "@cesium-devkit/material",
   "main": "index.js",
-  "module": "dist/core.es.js",
-  "types": "dist/core.d.ts",
+  "module": "dist/material.es.js",
+  "types": "dist/material.d.ts",
   "files": [
     "index.js",
     "dist"
   ],
   "exports": {
     ".": {
-      "types": "./dist/core.d.ts",
+      "types": "./dist/material.d.ts",
       "node": {
-        "production": "./dist/core.cjs.prod.js",
-        "development": "./dist/core.cjs.js",
+        "production": "./dist/material.cjs.prod.js",
+        "development": "./dist/material.cjs.js",
         "default": "./index.js"
       },
-      "module": "./dist/core.es.js",
-      "import": "./dist/core.es.js",
+      "module": "./dist/material.es.js",
+      "import": "./dist/material.es.js",
       "require": "./index.js"
     },
     "./*": "./*"
   },
   "buildOptions": {
-    "name": "CesiumDevkitCore",
+    "name": "CesiumDevkitMaterials",
     "formats": [
       "es",
       "cjs",
@@ -34,7 +34,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BitterBar/cesium-devkit",
-    "directory": "packages/core"
+    "directory": "packages/material"
   },
   "keywords": [
     "cesium-devkit"
@@ -44,9 +44,10 @@
   "bugs": {
     "url": "https://github.com/BitterBar/cesium-devkit/issues"
   },
-  "homepage": "https://github.com/BitterBar/cesium-devkit/tree/main/packages/core#readme",
+  "homepage": "https://github.com/BitterBar/cesium-devkit/tree/main/packages/material#readme",
   "devDependencies": {
     "cesium": "^1.120.0",
+    "@cesium-devkit/shader": "workspace:*",
     "@cesium-devkit/shared": "workspace:*"
   },
   "peerDependencies": {

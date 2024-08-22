@@ -1,8 +1,6 @@
-import { Property, Event as CEvent, Material } from 'cesium'
-import { DEFAULT_ANIMATION_SPEED, DEFAULT_COLOR } from '../Materials/TrailLinkMaterial'
+import { Property, Event as CEvent, Material, Color } from 'cesium'
 import setPropertyWithEvent from '../_utils/setPropertyWithEvent'
-import defaultValue from '../_utils/defaultValue'
-import defined from '../_utils/defined'
+import { defined, defaultValue } from '@cesium-devkit/shared'
 
 /**
  * @typedef {{
@@ -66,9 +64,9 @@ export default class TrailLinkMaterialProperty {
   getValue(time, result) {
     if (!defined(result)) result = {}
 
-    result.animationSpeed = defaultValue(this._animationSpeed, DEFAULT_ANIMATION_SPEED)
+    result.animationSpeed = defaultValue(this._animationSpeed, 0.005)
     result.image = Property.getValueOrUndefined(this._image, time)
-    result.color = Property.getValueOrClonedDefault(this._color, time, DEFAULT_COLOR, result.color)
+    result.color = Property.getValueOrClonedDefault(this._color, time, Color.WHITE, result.color)
 
     return result
   }

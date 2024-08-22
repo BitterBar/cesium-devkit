@@ -6,5 +6,11 @@
     "emitDeclarationOnly": true,
     "stripInternal": true
   },
-  "include": ["packages/core/src", "env.d.ts"]
+  "include": [
+    "env.d.ts",
+    "packages/shared/src",
+    "packages/shader/src",
+    "packages/material/src",
+    "packages/core/src"
+  ]
 }

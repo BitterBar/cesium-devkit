@@ -1,7 +1,6 @@
 import { Cartesian3, BoundingSphere, SceneTransforms, type Viewer, type Cartesian2 } from 'cesium'
 import computeBoundingSphereVisibility from '../_utils/computeBoundingSphereVisibility'
-import defined from '../_utils/defined'
-import defaultValue from '../_utils/defaultValue'
+import { defined, defaultValue } from '@cesium-devkit/shared'
 
 export interface CustomWindowOptions {
   show?: boolean
