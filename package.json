@@ -28,6 +28,9 @@
       "prettier --parser=typescript --write"
     ]
   },
+  "engines": {
+    "node": ">=18.20.0"
+  },
   "dependencies": {
     "vue": "^3.4.29"
   },
