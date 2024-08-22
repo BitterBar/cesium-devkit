@@ -31,7 +31,7 @@ export default class CustomWindow {
   _wc: Cartesian2 | null = null
   _show = true
 
-  verticalOrigin: VerticalOrigin = VerticalOrigin.BOTTOM
+  verticalOrigin: VerticalOrigin = VerticalOrigin.CENTER
   horizontalOrigin: HorizontalOrigin = HorizontalOrigin.CENTER
   pixelOffset: Cartesian2 | null = null
 
@@ -115,17 +115,17 @@ export default class CustomWindow {
     // 根据垂直和水平对齐方式调整位置
     const { verticalOrigin, horizontalOrigin } = this
     const { width, height } = _element.getBoundingClientRect()
-    let top = wc.y - height
-    let left = wc.x - width / 2
+    let top = wc.y
+    let left = wc.x
 
     switch (verticalOrigin) {
       case VerticalOrigin.TOP:
         break
       case VerticalOrigin.CENTER:
-        top += height / 2
+        top -= height / 2
         break
       case VerticalOrigin.BOTTOM:
-        top += height
+        top -= height
         break
     }
 
@@ -133,14 +133,14 @@ export default class CustomWindow {
       case HorizontalOrigin.LEFT:
         break
       case HorizontalOrigin.CENTER:
-        left += width / 2
+        left -= width / 2
         break
       case HorizontalOrigin.RIGHT:
-        left += width
+        left -= width
         break
     }
 
-    _element.style.transform = `translate(${top}px, ${left}px)`
+    _element.style.transform = `translate(${left}px, ${top}px)`
   }
 
   _register() {

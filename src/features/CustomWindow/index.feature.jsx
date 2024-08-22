@@ -1,7 +1,7 @@
 import './index.css'
 
 import { defineComponent, onBeforeUnmount, onMounted, render, h, ref, Teleport } from 'vue'
-import { Cartesian3 } from 'cesium'
+import { Cartesian2, Cartesian3, Color, HorizontalOrigin, VerticalOrigin } from 'cesium'
 import { centerDegrees } from '@/source'
 
 import useViewerStore from '@/store/viewerStore'
@@ -50,9 +50,25 @@ export default defineComponent({
     const customWindow = new CustomWindow({
       show: show.value,
       position,
-      viewer
+      viewer,
+      pixelOffset: new Cartesian2(0, -50),
+      verticalOrigin: VerticalOrigin.BOTTOM,
+      horizontalOrigin: HorizontalOrigin.CENTER
     })
-    onBeforeUnmount(() => customWindow.destroy())
+
+    viewer.entities.add({
+      position,
+      ellipse: {
+        semiMinorAxis: 10.0,
+        semiMajorAxis: 10.0,
+        material: Color.RED
+      }
+    })
+
+    onBeforeUnmount(() => {
+      customWindow.destroy()
+      viewer.entities.removeAll()
+    })
 
     onMounted(() => {
       const div = document.createElement('div')
