@@ -1,6 +1,6 @@
 {
   "name": "@cesium-devkit/shader",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "@cesium-devkit/shader",
   "main": "index.js",
   "module": "dist/shader.es.js",

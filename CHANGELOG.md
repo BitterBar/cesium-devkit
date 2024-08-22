@@ -1,3 +1,12 @@
+## [0.0.1-beta.2](https://github.com/BitterBar/cesium-devkit/compare/v0.0.1-beta.1...v0.0.1-beta.2) (2024-08-22)
+
+
+### Bug Fixes
+
+* **CustomWindow:** fix CustomWindow alignment error ([3b47125](https://github.com/BitterBar/cesium-devkit/commit/3b471254ef9e912785f0f65d51a988c58e99e1b9))
+
+
+
 ## [0.0.1-beta.1](https://github.com/BitterBar/cesium-devkit/compare/v0.0.1-beta.0...v0.0.1-beta.1) (2024-08-22)
 
 
