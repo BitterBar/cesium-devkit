@@ -284,7 +284,9 @@ async function getCIResult() {
 async function isInSyncWithRemote() {
   try {
     const branch = await getBranch()
-    const res = await fetch(`https://api.github.com/repos/vuejs/core/commits/${branch}?per_page=1`)
+    const res = await fetch(
+      `https://api.github.com/repos/BitterBar/cesium-devkit/commits/${branch}?per_page=1`
+    )
     const data = await res.json()
     if (data.sha === (await getSha())) {
       return true
